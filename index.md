@@ -20,6 +20,7 @@
             <h3>Compositor de Músicas <a href="https://openai.com/blog/gpt-2-1-5b-release/">Gpt2</a></h3>
 
             <p class="lead">MVP desenvolvido durante o Hackathon Code/Stage Sony</p>            
+            <!-- <p class="lead">É usado uma api proxy para conectar com o modelo gerador de letras o que pode gerar atrasos.</p>             -->
           </div>
 		<form id="gen-form">
         <div class="row">
@@ -81,18 +82,16 @@
 	</form>
 		
            	<div class="row" style="display: block; margin-bottom: 1em;">
-			   <div id="summernote">Letras de músicas geradas artificialmente</div>
+			   <div id="summernote">Quanto maior o índice de criatividade melhor!</div>
 			</div> 
 			
     </div>
 	<script type="text/javascript">
-    
-	const base_url = "https://gpt2-compositor-eroai6oftq-ue.a.run.app/"
-	// const base_url = "http://localhost:8080/mock"
+	const base_url = "https://lamusic-platform-backend.herokuapp.com/proxy"
+	// const base_url = "https://gpt2-compositor-eroai6oftq-ue.a.run.app/"    
+	// const base_url = "http://localhost:8080/proxy"
     var form = document.getElementById("gen-form");
-	form.addEventListener("submit", sendRequest, true);
-
-	
+	form.addEventListener("submit", sendRequest, true);	
 
 	$(function() {
         const $valueSpan = $('.valueSpan');
